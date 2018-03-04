@@ -1,7 +1,7 @@
 ---
 title: "HW4"
-author: "Vicki Hertzberg"
-date: "2/17/2018"
+author: "Martha Wetzel"
+date: "03/04/2018"
 output: html_document
 ---
 
@@ -22,7 +22,7 @@ vText <- c('nurse', 'nut', 'ninja', 'nutrient', 'under', 'unusual')
 We want to write a regular expression that matches `n`, `nu`, `un`, or `unu` in `vText` and replaces the matching patterns with `.`. To do this, the R code is as follows:
 
 ```{r}
-pattern <- 'u?nu?'
+pattern <- 'u?nu?' 
 gsub(pattern, '.', vText)
 ```
 
@@ -44,7 +44,8 @@ Write the R code that will make that happen.
 
 ```{r Answer 1}
 
-#Insert the code to answer the problem here.
+patterng <- 'o?go?' 
+gsub(patterng, '.', vText)
 
 ```
 
@@ -64,6 +65,8 @@ paste(x, y, z, collapse = NULL)
 ```
 
 Extra credit: What is the difference if you use the `paste0` function instead of the `paste` function above?
+`paste0` automatically strips the spaces from between the concatenated segments. `paste` defaults to a space to separate the 
+values, but allows the user to specify a different separator. 
 
 ####Problem 2.
 
@@ -79,12 +82,14 @@ Z <- "And the dish ran away with the spoon."
 ```
 
 Write the R code below to merge these 3 strings.
+** The instructions say to merge the 3 strings, but does not specify which of the 4 strings to merge so I'm just concatenating all of them. **
 
 ####Answer to Problem 2.
 
 ```{r Answer 2}
 
-#Insert the code to answer the problem here.
+cat4 <- paste(W, Y, X, Z, collapse = NULL)
+cat4
 
 ```
 
@@ -120,7 +125,8 @@ Z <- "And the dish ran away with the spoon."
 
 ```{r Answer 3}
 
-#Insert the code to answer the problem here.
+paste(X, Y, Z, NA, collapse = NULL)
+str_c(X, Y, Z, NA, collapse = NULL)
 
 ```
 
@@ -143,16 +149,9 @@ Suppose Melinda Higgins wants to extract the last *6* letters of her name.
 ```{r Problem 4}
 
 herName <- "Melinda Higgins"
-
-```
-
-Write the code below to extract the last 6 letters of her name.
-
-####Answer to Problem 4.
-
-```{r Answer 4}
-
-#Insert the code to answer the problem here.
+LengthM <- str_length(herName)
+Last6 <- str_sub(herName, LengthM-5, LengthM)
+Last6
 
 ```
 
@@ -188,7 +187,7 @@ Split this new string into separate words:
 
 ```{r Answer 5}
 
-#Insert the code to answer the problem here.
+str_split(myNewString,"_")
 
 ```
 
@@ -221,7 +220,7 @@ Split off the first word but leave the rest intact.
 
 ```{r Answer 6}
 
-#Insert the code to answer the problem here.
+str_split(myNewString,"_", n=2)
 
 ```
 
