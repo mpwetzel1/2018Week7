@@ -248,7 +248,7 @@ Use the `stri_count_words` function as above to count the number of distinct wor
 
 ```{r Answer 7}
 
-#Insert the code to answer the problem here.
+stri_count_words(yourNewString)
 
 ```
 
@@ -275,7 +275,7 @@ nurses <-c("Nightingale", "Barton", "Dix", "Sanger", "Barton", "Woodruff", "Linc
 
 ```{r Answer 8}
 
-#Insert your code to address the problem here
+nurses[stri_duplicated(mathematicians)]
 
 ```
 
@@ -305,7 +305,7 @@ How can we form the string `0_1-2_3-4_5-6_7-8_9-'?
 
 ```{r Answer 9}
 
-#Insert the code to solve the problem here.
+stri_join(DIGITS, separators = c("_","-"), collapse = "")
 
 ```
 
@@ -327,17 +327,8 @@ Using the original pun, replace `his` with `her` and ` he ` with ` she `:
 
 ```{r Problem 10}
 
-pun
+stri_replace_all_fixed(pun, c(" his "," he "), c(" her "," she "), vectorize_all = FALSE)
 
 ```
 
-####Answer 10 
-
-Note that the word `head` also starts with `he` but we don't want to substitute `she` into there.
-
-```{r Answer 10}
-
-#Insert the code to answer the problem here.
-
-```
 
